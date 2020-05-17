@@ -1,6 +1,20 @@
 <html>
-    <title>Message to Soph</title>
+    <title>Tabby's Blog</title>
 <body>
-    <p>LOVE YOU!</p>
+    <div>
+        <h1>Tabby's Blog</h1>
+        <br>
+        <p>Here are my posts:</p>
+        <br>
+        {% for post in posts %}
+            <div>
+                <h2><em>{{ post.title }}</em></h2>
+                <p>published: {{ post.published_date }}</p>
+                <br>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
