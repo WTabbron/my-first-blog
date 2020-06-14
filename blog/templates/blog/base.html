@@ -1,5 +1,18 @@
 {% load static %}
 <html>
+<style>
+    .main-background {
+        background-color: #dadada;
+        border-radius: 20%;
+        padding: 80px 40px 80px 40px;
+    }
+
+    .edit_btn {
+        float: right;
+        margin-right: 20px;
+    }
+
+</style>
 <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.css">
@@ -12,15 +25,24 @@
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu" ><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
-        <h1><a href="/">WILL TABBRON - BRIDGING COURSEWORK</a></h1>
+        <h1>
+            <a href="/">WILL TABBRON - BRIDGING COURSEWORK</a>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/BirminghamUniversityCrest.svg/1200px-BirminghamUniversityCrest.svg.png" width=75px height=90px>
+        </h1>
     </div>
-    <div class="content container">
+    <div class="edit_btn">
+        <a href="admin\"><button class="btn btn-lg btn-primary" type="button" name="button">Admin</button></a>
+    </div>
+    <div class="content container main-background">
         <div class="row">
             <div class="col-md-8">
+                <br>
+                <br>
             {% block content %}
             {% endblock %}
             </div>
         </div>
+        
     </div>
 </body>
 </html>

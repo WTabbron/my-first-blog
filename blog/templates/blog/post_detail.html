@@ -8,7 +8,9 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <div class="edit_btn">
+                <p>Edit Post: <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></p>
+            </div>
         {% endif %}
         <h2><a>{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
