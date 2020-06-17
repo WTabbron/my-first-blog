@@ -15,6 +15,10 @@
     .publish-btn {
         margin-top: 20px;
     }
+
+    .drafts-header {
+        color: black;
+    }
 </style>
 <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
@@ -26,8 +30,9 @@
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu btn btn-secondary" ><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'post_new_publish' %}" class="top-menu btn btn-secondary" ><span class="glyphicon glyphicon-plus"></span></a>
             <a href="{% url 'post_draft_list' %}" class="top-menu btn btn-secondary"><span class="glyphicon glyphicon-edit"></span></a>
+            <a href="{% url 'post_new_draft' %}" class="top-menu btn-secondary">new draft</a>
         {% endif %}
         <h1>
             <a href="/">WILL TABBRON - BRIDGING COURSEWORK</a>
