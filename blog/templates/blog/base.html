@@ -12,6 +12,9 @@
         margin-right: 20px;
     }
 
+    .publish-btn {
+        margin-top: 20px;
+    }
 </style>
 <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
@@ -23,7 +26,8 @@
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu" ><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'post_new' %}" class="top-menu btn btn-secondary" ><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'post_draft_list' %}" class="top-menu btn btn-secondary"><span class="glyphicon glyphicon-edit"></span></a>
         {% endif %}
         <h1>
             <a href="/">WILL TABBRON - BRIDGING COURSEWORK</a>
