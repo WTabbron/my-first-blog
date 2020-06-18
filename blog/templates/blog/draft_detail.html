@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% else %}
+            <div class="date">
+                <p>Not yet published</p>
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <div class="edit_btn">
+                <p>Edit Post: <a class="btn btn-default" href="{% url 'draft_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></p>
+                <a class="btn btn-danger" href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+            </div>
+        {% endif %}
+        <h2><a>{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        {% if not post.published_date %}
+            <a class="publish-btn btn btn-primary" href="{% url 'post' pk=post.pk %}">Publish</a>
+        {% endif %}
+    </div>
+{% endblock %}
