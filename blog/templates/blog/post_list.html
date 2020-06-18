@@ -2,6 +2,8 @@
 
 {% block content %}
     <ul>
+        <h1 class="secondary-header">Posts</h1>
+        <br>
         {% for post in posts %}
         <div class="post">
             <h2><li><h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2></li></h2>
