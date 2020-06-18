@@ -84,7 +84,7 @@ def draft_edit(request, pk):
             return redirect('draft_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/draft_edit.html', {'form': form})
 
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
