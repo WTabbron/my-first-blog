@@ -14,7 +14,7 @@
 
         {% if user.is_authenticated %}
             <div class="edit_btn">
-                <p>Edit Post: <a class="btn btn-default" href="{% url 'draft_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></p>
+                <p>Edit Draft: <a class="btn btn-default" href="{% url 'draft_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></p>
                 <a class="btn btn-danger" href="{% url 'post_delete' pk=post.pk %}">Delete</a>
             </div>
         {% endif %}
