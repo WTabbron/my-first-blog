@@ -20,8 +20,7 @@
         {% endif %}
         <h2><a>{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        {% if not post.published_date %}
-            <a class="publish-btn btn btn-primary" href="{% url 'post' pk=post.pk %}">Publish</a>
-        {% endif %}
+        <br>
+        <a href="{% url 'post_list' %}"><button class="btn btn-lg btn-block btn-primary">Back to Posts</button></a>
     </div>
 {% endblock %}

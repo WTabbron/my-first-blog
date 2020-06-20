@@ -4,7 +4,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    path('', views.post_list, name='post_list'),
+    path('', views.home, name='home'),
+    path('posts/', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('draft/<int:pk>/edit/', views.draft_edit, name='draft_edit'),
