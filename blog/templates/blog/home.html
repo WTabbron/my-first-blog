@@ -54,7 +54,8 @@
             <div class="inner-background">
                 <div class="main-button">
                     {% if user.is_authenticated %}
-                        <div class="main-button secondary-button-left"><a href="{% url 'post_draft_list' %}"><button class="btn btn-primary btn-block btn-lg">See Drafts</button></a></div><div class="secondary-button-right"><a href="{% url 'post_list' %}"><button class="btn btn-primary btn-block btn-lg"type="button" name="button">See Posts</button></a></div>
+                        <div class="secondary-button-left"><a href="{% url 'post_list' %}"><button class="btn btn-primary btn-block btn-lg"type="button" name="button">See Posts</button></a></div>
+                        <div class="main-button secondary-button-right"><a href="{% url 'post_draft_list' %}"><button class="btn btn-primary btn-block btn-lg">See Drafts</button></a></div>
                         <br>
                         <br>
                     {% else %}
